@@ -9,7 +9,9 @@ from humanfriendly import format_timespan, format_size, format_number, format_le
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse
 from gtts import gTTS
 from googletrans import Translator
+#==============================================================================#
 botStart = time.time()
+#==============================================================================#
 mulai = time.time()
 tokenOpen = codecs.open("prankbot.json","r","utf-8")
 token = json.load(tokenOpen)
@@ -61,11 +63,11 @@ settings={
     "lang":"JP",
     "prankRespon": True,
     "prankcontact":False,
-    "message": "THANKS FOR ADD ME\nCREATOR BY\nhttp://line.me/ti/p/~adiputra.95",
-    "prankTL":False,
-    "prankAdd":False,
-    "keyCommand": ".",
-    "server": "u0ac948397fbc732bd3bc5ca273faa698",
+    "message": "【さัএπัஞ✵ບิथℓℓҨतΩ】 :\nList opsi\n🤖 Pasangan Hidup :\n🔰 Only Status ⏩ 180K/Bulan\n\n🤖 Systim Contract :\n🔰 Only Curhat ⏩ 100K/Bulan\n🔰 Zona Friend + TTM\n🔰 Zona Nyaman + Full Care + On 5day + 2 day free ⏩ 300K/Bulan\n\n✍️ Bisa Requests Mau Berapa Lama Durasi Buat Debay.\nChat Ke : http://line.me/ti/p/~max_pv\n\n📃\n* Always on 24 Jam\n* Keuntungan Banyak\n* Durasi min 0.25month\n* max no limit",
+    "prankTL":True,
+    "prankAdd":True,
+    "keyCommand": "【さัএπัஞ✵ບิथℓℓҨतΩ】",
+    "server": "ue1d6a794435130d139f9c5dde19aa9e5",
     "conection":True,
     "setKey": False,
     "prankJoin":False,
@@ -133,10 +135,10 @@ def prankhelp():
         key = settings['keyCommand']
     else:
         key = ''
-    prankMessage = "║╠ |ᴘʀᴀʙᴋʙᴏᴛs ᴄʀᴇᴀᴛᴏʀ| ╣║\n" + \
-                  "║╠•" + key + "pkick *tag" + "\n" + \
-                  "║╠•" + key + "pjoin" + "\n" + \
-                  "║╠•" + key + "pbye" + "\n" + \
+    prankMessage = "║╠ |ᴄʀᴇᴀᴛᴏʀ MAXSY| ╣║\n" + \
+                  "║╠•" + key + "mkick *tag" + "\n" + \
+                  "║╠•" + key + "mjoin" + "\n" + \
+                  "║╠•" + key + "mbye" + "\n" + \
                   "║╠•" + key + "banlist" + "\n" + \
                   "║╠•" + key + "clearban" + "\n" + \
                   "║╠•" + key + "bye" + "\n" + \
@@ -186,8 +188,8 @@ def bot(op):
         if op.type == 5:
             if settings["prankAdd"] == True:
                 sb.findAndAddContactsByMid(op.param1)
-            pb1.sendMessage(op.param1, "Makasih sudah add ini crator kami\nJangan lupa subcrabe channelnya kak\nhttps://www.youtube.com/channel/UCycBrqSWEHdk-slnhUmGWiQ")
-            pb1.sendContact(op.param1, "u0ac948397fbc732bd3bc5ca273faa698")
+            pb1.sendMessage(op.param1, "แอดมาไม่ทักเดี๋ยวก็บล็อคเรยนี่ 😳")
+            pb1.sendContact(op.param1, "ue1d6a794435130d139f9c5dde19aa9e5")
             sb.sendMessage(op.param1, settings["message"])
         if op.type == 11:
             if op.param3 == '1':
@@ -488,7 +490,7 @@ def bot(op):
                         prankbot = command(text)
                         if prankbot == "help" or prankbot == "settings"or prankbot == "set":
                             try:
-                                ret_ = "\n║╠•━╦CEK SETTINGS╦━\n║╠•━━━━━━━━━━━━━"
+                                ret_ = "\n║╠•【さัএπัஞ✵ບิथℓℓҨतΩ】\n║╠•━━━━━━━━━━━"
                                 if settings["setKey"] == True: ret_ += "\n║╠•『Keyboard』Ξ 『ON』"
                                 else: ret_ += "\n║╠•『Keyboard』Ξ 『OFF』"
                                 if settings["prankRespon"] == True: ret_ += "\n║╠•『  Prankrespon  』Ξ 『ON』"
@@ -512,32 +514,32 @@ def bot(op):
                                 if msg.to in Prankinvite: ret_+="\n║╠•『 protectinvite 』Ξ 『ON』"
                                 else: ret_ += "\n║╠•『 protectinvite 』Ξ 『OFF』"
                                 prankMessage = prankhelp()
-                                sb.sendMessage(to, str(prankMessage)+str(ret_)+"\n║╠ |ᴘʀᴀʙᴋʙᴏᴛs ᴄʀᴇᴀᴛᴏʀ| ╣║\n╰━━━╩℘̰̰̈́ґ̰̰̈́∂̰̰̈́η̰̰̈́к╩̰̰̈́в̰̰̈́❍̰̰̈́т̰̰̈́ѕ̰̰̈́╩━━━╯")
-                                sb.sendMessage(settings["server"], str(prankMessage)+str(ret_)+"\n║╠ |ᴘʀᴀʙᴋʙᴏᴛs ᴄʀᴇᴀᴛᴏʀ| ╣║\n╰━━━╩℘̰̰̈́ґ̰̰̈́∂̰̰̈́η̰̰̈́к╩̰̰̈́в̰̰̈́❍̰̰̈́т̰̰̈́ѕ̰̰̈́╩━━━╯")
+                                sb.sendMessage(to, str(prankMessage)+str(ret_)+"\n║╠ |ᴄʀᴇᴀᴛᴏʀ MAXSY| ╣║\n【さัএπัஞ✵ບิथℓℓҨतΩ】")
+                                sb.sendMessage(settings["server"], str(prankMessage)+str(ret_)+"\n║╠ |ᴄʀᴇᴀᴛᴏʀ MAXSY| ╣║\n╰━━━╩SELF BOT╩━━━╯")
                             except Exception as e:
-                                sb.sendMessage("u0ac948397fbc732bd3bc5ca273faa698", str(e))
-                        elif prankbot == "prankadd:on":
+                                sb.sendMessage("ue1d6a794435130d139f9c5dde19aa9e5", str(e))
+                        elif prankbot == "madd:on":
                             settings["prankAdd"] = True
                             sb.sendMessage(to, "Already on")
-                        elif prankbot == "prankadd:off":
+                        elif prankbot == "madd:off":
                             settings["prankAdd"] = False
                             sb.sendMessage(to, "Already off")
-                        elif prankbot == "prankrespon:on":
+                        elif prankbot == "mrespon:on":
                             settings["prankRespon"] = True
                             sb.sendMessage(to, "Already on")
-                        elif prankbot == "prankrespon:off":
+                        elif prankbot == "mrespon:off":
                             settings["prankRespon"] = False
                             sb.sendMessage(to, "Already off")
-                        elif prankbot == "prankjoin:on":
+                        elif prankbot == "mjoin:on":
                             settings["prankJoin"] = True
                             sb.sendMessage(to, "Already on")
-                        elif prankbot == "prankjoin:off":
+                        elif prankbot == "mjoin:off":
                             settings["prankJoin"] = False
                             sb.sendMessage(to, "Already off")
-                        elif prankbot == "pranktl:on":
+                        elif prankbot == "mtl:on":
                             settings["prankTL"] = True
                             sb.sendMessage(to, "Already on")
-                        elif prankbot == "pranktl:off":
+                        elif prankbot == "mtl:off":
                             settings["prankTL"] = False
                             sb.sendMessage(to, "Already off")
                         elif prankbot == "jointicket:on":
@@ -546,7 +548,7 @@ def bot(op):
                         elif prankbot == "jointicket:off":
                             settings["prankJoinLink"] = False
                             sb.sendMessage(to, "Already off")
-                        elif 'Prankqr:' in msg.text:
+                        elif 'Mqr:' in msg.text:
                               acil = msg.text.replace('Prankqr:','')
                               if acil == 'on':
                                   if msg.to in Prankqr:
@@ -564,7 +566,7 @@ def bot(op):
                                     else:
                                          msgs = "sudah tidak aktif dalam grup ini"
                                     sb.sendMessage(msg.to, msgs)
-                        elif 'Prankname:' in msg.text:
+                        elif 'Mname:' in msg.text:
                               acil = msg.text.replace('Prankname:','')
                               if acil == 'on':
                                   if msg.to in Prankname:
@@ -582,7 +584,7 @@ def bot(op):
                                     else:
                                          msgs = "sudah tidak aktif dalam grup ini"
                                     sb.sendMessage(msg.to, msgs)
-                        elif 'Prankinvite:' in msg.text:
+                        elif 'Minvite:' in msg.text:
                               acil = msg.text.replace('Prankinvite:','')
                               if acil == 'on':
                                   if msg.to in Prankinvite:
@@ -600,7 +602,7 @@ def bot(op):
                                     else:
                                          msgs = "sudah tidak aktif dalam grup ini"
                                     sb.sendMessage(msg.to, msgs)
-                        elif 'Prankmember:' in msg.text:
+                        elif 'Mmember:' in msg.text:
                               acil = msg.text.replace('Prankmember:','')
                               if acil == 'on':
                                   if msg.to in Prankmember:
@@ -622,7 +624,7 @@ def bot(op):
 #KARNA TUJUANYA BUKAN KE MEDIA
 #INI BUAT PROTECT GRUP MAYAN LAH HEHE.
 #CREATOR BY ACIL PRANKBOTS.
-                        elif prankbot.startswith("pkick "):
+                        elif prankbot.startswith("mkick "):
                             if 'MENTION' in msg.contentMetadata.keys()!= None:
                                 names = re.findall(r'@(\w+)', text)
                                 mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -661,7 +663,7 @@ def bot(op):
                             pb8.sendMessage(to,"succes.!!")
                             pb9.sendMessage(to,"succes.!!")
                             pb10.sendMessage(to,"succes.!!")
-                        elif prankbot == "pjoin":
+                        elif prankbot == "mjoin":
                             G = sb.getGroup(msg.to)
                             ginfo = sb.getGroup(msg.to)
                             G.preventedJoinByTicket = False
@@ -681,7 +683,7 @@ def bot(op):
                             G = sb.getGroup(msg.to)
                             G.preventedJoinByTicket = True
                             random.choice(PRANK).updateGroup(G)
-                        elif prankbot == "pbye":
+                        elif prankbot == "mbye":
                             pb1.leaveGroup(msg.to)
                             pb2.leaveGroup(msg.to)
                             pb3.leaveGroup(msg.to)
